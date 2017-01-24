@@ -1,33 +1,23 @@
-/*
- * Esempi di gestione delle matrici di interi.
- */
-
 package matrici;
 
 import java.io.IOException;
 
 /**
  *
- * @author Daniel
+ * @author harch
  */
 public class Matrici {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws IOException {
-        
-        Matrice m = new Matrice(4, 6);
-        
-      
-        m.fillRandom();
-        
-        System.out.println(m); 
-       
-        
-        m.toFile("data/matrice.txt");
-        
-              
+
+        Matrice ma = new Matrice(2, 1);
+
+        ma.fillRandom();
+
+        System.out.println(ma);
+
+        ma.toFile("data/risultato.txt");
+
     }
-    
+
 }

@@ -1,8 +1,3 @@
-/*
- * Matrice: una classe wrapper
- * per una matrice bidimensionale di interi.
- */
-
 package matrici;
 
 import java.io.BufferedReader;
@@ -15,80 +10,69 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Daniel
+ * @author Harch
  */
 public class Matrice {
-    
+
     int[][] theMatrix;
-    
-    // costruttore uno
-    public Matrice(int x, int y) {
-        // da completare
-    theMatrix=new int[x][y];
+
+    public Matrice(int a, int b) {
+
+        theMatrix = new int[a][b];
     }
-    
-    // costruttore due
-    public Matrice(int[][] m) {
-        theMatrix = m;
+
+    public Matrice(int[][] f) {
+        theMatrix = f;
     }
-    
-    public Matrice(String filename) throws FileNotFoundException, IOException{
-        try{
-            FileReader f = new FileReader(filename);
-            BufferedReader bf = new BufferedReader(f);
-            String s = bf.readLine();
-            System.out.println(s);
+
+    public Matrice(String filename) throws FileNotFoundException, IOException {
+        try {
+            FileReader fr = new FileReader(filename);
+            BufferedReader br = new BufferedReader(fr);
+            String u = br.readLine();
+            System.out.println(u);
         } catch (FileNotFoundException ex) {
-            
+
         }
     }
-    
+
     public void fillRandom() {
-      for (int i = 0; i < theMatrix.length; i++) {
-        for (int j = 0; j < theMatrix[i].length; j++) {
-          theMatrix[i][j] = (int) (Math.random()*10);
-          
-  
+        for (int i = 0; i < theMatrix.length; i++) {
+            for (int j = 0; j < theMatrix[i].length; j++) {
+                theMatrix[i][j] = (int) (Math.random() * 10);
+
+            }
         }
-      }
     }
 
     @Override
     public String toString() {
-        String s="";
-        for (int i = 0; i < theMatrix.length; i++) {
-        for (int j = 0; j < theMatrix[i].length; j++) {
-          theMatrix[i][j] = (int) (Math.random()*10);
-            s +=theMatrix[i][j]+"\t";  
+        String st = "";
+        for (int e = 0; e < theMatrix.length; e++) {
+            for (int k = 0; k < theMatrix[e].length; k++) {
+                theMatrix[e][k] = (int) (Math.random() * 10);
+                st += theMatrix[e][k] + "\t";
+            }
+            st += "\n";
+
         }
-            s +="\n";
-        
-        }
-        return s;
+        return st;
     }
 
-    public void toFile( String filename ) throws IOException {
+    public void toFile(String filename) throws IOException {
         FileWriter out;
-        try{
-        out = new FileWriter("data/matrice.txt");
-        out.write(this.toString());
-        out.close();
-        
-            
-        }
-        catch(IOException ex){
-        System.out.println("Errore" + ex.getMessage());
+        try {
+            out = new FileWriter("data/risultato.txt");
+            out.write(this.toString());
+            out.close();
+
+        } catch (IOException ex) {
+            System.out.println("Errore" + ex.getMessage());
         }
     }
 
-    void fromFile( String filename )  {
-        
-    
-       
-        
-       }
-    
-    
+    void fromFile(String filename) {
+           //da completare
+    }
+
 }
-
-
